@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-TW" class="dark">
 <head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安卓安全移動回報與 LINE 自動通報系統</title>
@@ -857,5 +859,10 @@ function doPost(e) {
             return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         }
     </script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
+</script>
 </body>
 </html>
